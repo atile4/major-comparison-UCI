@@ -17,4 +17,4 @@ Python 3.7 interpreter
 
 - If there are no overlapping courses under a major's subheader, that subheader will still be printed out with no distinction.
 
-- Some courses may be counted incorrectly.
+- If, on the UCI website, courses are listed in different tables, the program will only read the first table.
