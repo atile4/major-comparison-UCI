@@ -1,22 +1,22 @@
-# MAJORS : list = ['Literary Journalism', 'International Studies', 'Data Science', 'Sociology', 
-                #  'Chinese Studies', 'German Studies', 'Civil Engineering', 'Environmental Engineering', 
-                #  'Biological Sciences', 'Game Design and Interactive Media', 'Mechanical Engineering', 
-                #  'Exercise Sciences', 'Philosophy', 'Mathematics', 'Classics', 'Biomedical Engineering', 
-                #  'Business Economics', 'Quantitative Economics', 'Spanish', 'Japanese Language and Literature', 
-                #  'Applied and Computational Mathematics', 'Art', 'Global Middle East Studies', 'Public Health Policy', 
-                #  'Chemical Engineering', 'East Asian Cultures', 'Physics', 'Asian American Studies', 'Electrical Engineering', 
-                #  'Biomedical Engineering; Premedical', 'Anthropology', 'Nursing Science', 'Korean Literature and Culture', 'History', 
-                #  'Gender and Sexuality Studies', 'Ecology and Evolutionary Biology', 'Developmental and Cell Biology', 'Genetics', 
-                #  'Applied Physics', 'Public Health Sciences', 'Computer Engineering', 'Music', 'Biology/Education', 
-                #  'Software Engineering', 'Psychology', 'Global Cultures', 'Social Ecology', 'European Studies', 
-                #  'Biochemistry and Molecular Biology', 'Neurobiology', 'Dance', 'Information and Computer Science', 
-                #  'Criminology, Law and Society', 'Education Sciences', 'Business Administration', 'Materials Science and Engineering', 
-                #  'Business Information Management', 'Dance, ', 'Religious Studies', 'Drama', 'Language Science', 'Political Science', 
-                #  'Comparative Literature', 'Informatics', 'Computer Science', 'Pharmaceutical Sciences', 'Film and Media Studies', 
-                #  'Biomedical Engineering: Premedical', 'Psychological Science', 'Microbiology and Immunology', 'Chemistry', 
-                #  'African American Studies', 'Chicano/Latino Studies', 'French', 'Social Policy and Public Service', 
-                #  'Earth System Science', 'Art History', 'Cognitive Sciences', 'Urban Studies', 
-                #  'English', 'Aerospace Engineering', 'Economics']
+MAJORS_LIST : list = ['Literary Journalism', 'International Studies', 'Data Science', 'Sociology', 
+                 'Chinese Studies', 'German Studies', 'Civil Engineering', 'Environmental Engineering', 
+                 'Biological Sciences', 'Game Design and Interactive Media', 'Mechanical Engineering', 
+                 'Exercise Sciences', 'Philosophy', 'Mathematics', 'Classics', 'Biomedical Engineering', 
+                 'Business Economics', 'Quantitative Economics', 'Spanish', 'Japanese Language and Literature', 
+                 'Applied and Computational Mathematics', 'Art', 'Global Middle East Studies', 'Public Health Policy', 
+                 'Chemical Engineering', 'East Asian Cultures', 'Physics', 'Asian American Studies', 'Electrical Engineering', 
+                 'Biomedical Engineering; Premedical', 'Anthropology', 'Nursing Science', 'Korean Literature and Culture', 'History', 
+                 'Gender and Sexuality Studies', 'Ecology and Evolutionary Biology', 'Developmental and Cell Biology', 'Genetics', 
+                 'Applied Physics', 'Public Health Sciences', 'Computer Engineering', 'Music', 'Biology/Education', 
+                 'Software Engineering', 'Psychology', 'Global Cultures', 'Social Ecology', 'European Studies', 
+                 'Biochemistry and Molecular Biology', 'Neurobiology', 'Dance', 'Information and Computer Science', 
+                 'Criminology, Law and Society', 'Education Sciences', 'Business Administration', 'Materials Science and Engineering', 
+                 'Business Information Management', 'Dance, ', 'Religious Studies', 'Drama', 'Language Science', 'Political Science', 
+                 'Comparative Literature', 'Informatics', 'Computer Science', 'Pharmaceutical Sciences', 'Film and Media Studies', 
+                 'Biomedical Engineering: Premedical', 'Psychological Science', 'Microbiology and Immunology', 'Chemistry', 
+                 'African American Studies', 'Chicano/Latino Studies', 'French', 'Social Policy and Public Service', 
+                 'Earth System Science', 'Art History', 'Cognitive Sciences', 'Urban Studies', 
+                 'English', 'Aerospace Engineering', 'Economics']
 MAJORS = {
     'aerospace engineering': 'https://catalogue.uci.edu/thehenrysamuelischoolofengineering/departmentofmechanicalandaerospaceengineering/aerospaceengineering_bs/',
     'african american studies': 'https://catalogue.uci.edu/schoolofhumanities/departmentofafricanamericanstudies/africanamericanstudies_ba/',
@@ -105,8 +105,8 @@ MAJORS = {
 def majorCheck(response : str):
     global MAJORS
     while response.lower() not in MAJORS:
-        response = input("Invalid input. Please enter a valid major from the UCI catalogue.")
-    print("Valid major")
+        response = input("Invalid input. Please enter a valid major from the UCI catalogue.\n> ")
+    print("Valid major\n")
     
     return MAJORS[response]
 
