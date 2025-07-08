@@ -1,5 +1,14 @@
 # UCI Major Comparer
 
+ ```
+----------------------------------------
+|         UCI Major Comparison         |
+|                                      |
+|           written by atile           |
+----------------------------------------
+```
+
+
 Generates a list of overlapping courses between two majors from the University of California Irvine Catalogue
 
 ## Requirements
