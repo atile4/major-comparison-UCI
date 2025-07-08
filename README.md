@@ -1,13 +1,11 @@
-----------------------------------------
-|         UCI Major Comparison         |
-|                                      |
-|           written by atile           |
-----------------------------------------
+# UCI Major Comparer
 
 Generates a list of overlapping courses between two majors from the University of California Irvine Catalogue
 
 ## Requirements
 Python 3.7 interpreter
+
+Modules in requirements.txt
 
 ## Installation
 1. Download the .py files in majorcomparer folder
