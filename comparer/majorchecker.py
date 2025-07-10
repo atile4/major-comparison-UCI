@@ -102,12 +102,7 @@ MAJORS = {
     'biomedical engineering; premedical': 'https://catalogue.uci.edu/thehenrysamuelischoolofengineering/departmentofbiomedicalengineering/biomedicalengineeringpremedical_bs/'
 }
 
-def majorCheck(response : str):
-    global MAJORS
-    while response.lower() not in MAJORS:
-        response = input("Invalid input. Please enter a valid major from the UCI catalogue.\n> ")
-    print("Valid major\n")
-    
-    return MAJORS[response]
+def isMajor(response : str):
+    return response.lower() in MAJORS
 
 
