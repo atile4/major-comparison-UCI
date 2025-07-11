@@ -101,8 +101,3 @@ MAJORS = {
     'business information management': 'https://catalogue.uci.edu/interdisciplinarystudies/businessinformationmanagement_bs/',
     'biomedical engineering; premedical': 'https://catalogue.uci.edu/thehenrysamuelischoolofengineering/departmentofbiomedicalengineering/biomedicalengineeringpremedical_bs/'
 }
-
-def isMajor(response : str):
-    return response.lower() in MAJORS
-
-
