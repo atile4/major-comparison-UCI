@@ -1,6 +1,9 @@
 from scrape import makeTableList, printCourse
-from majorchecker import isMajor, MAJORS
-    
+from major_info import MAJORS
+
+def isMajor(response : str):
+    return response.lower() in MAJORS
+
 def comparer():
     response1 = input("Input the first major, as listed from the UCI catalogue.\n> ")
     while not isMajor(response1):
@@ -8,16 +11,17 @@ def comparer():
             exit()
         else:
             response1 = input("Invalid major. Please input a major as listed from the UCI catalogue.\n> ")
+    website1 = MAJORS[response1]
     
     response2 = input("Input the second major, as listed from the UCI catalogue.\n> ")
+    
     while not isMajor(response2):
         if (response2 == "exit"): exit()
         else:
             response2 = input("Invalid major. Please input a major as listed from the UCI catalogue.\n> ")
-            
-    website1 = MAJORS[response1]
+    
     website2 = MAJORS[response2]
-
+    
     table_list1, courselist1 = makeTableList(website=website1)  
     table_list2, courselist2 = makeTableList(website=website2)
     
