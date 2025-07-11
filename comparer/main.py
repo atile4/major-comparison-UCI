@@ -1,4 +1,4 @@
-from majorchecker import majorCheck, MAJORS_LIST
+from major_info import MAJORS_LIST
 from compare import comparer
 
 def main():
