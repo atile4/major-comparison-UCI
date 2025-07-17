@@ -1,8 +1,32 @@
-from scrape import makeTableList, printCourse
+from scrape import getTable
 from major_info import MAJORS
+
+def makeTableList(website : str) -> list | list:
+    rows = getTable(website)
+
+    table_list = []
+    course_list = []
+    
+    for row in rows:
+        cols = row.find_all('td')
+        first_col = cols[0].get_text(strip=True).replace("\xa0", " ")
+        if len(cols) == 1:
+            table_list.append(first_col)
+        else:
+            title = cols[1].get_text(strip=True)
+            table_list.append(first_col + " : " + title)
+            course_list.append(first_col + " : " + title)
+    return (table_list, course_list)
 
 def isMajor(response : str):
     return response.lower() in MAJORS
+
+def printCourse(overlapping_course_list):
+    for table_item in overlapping_course_list:
+        if " : " in table_item:
+            print("  - ", end="")
+        
+        print(table_item)
 
 def comparer():
     response1 = input("Input the first major, as listed from the UCI catalogue.\n> ")
@@ -12,7 +36,7 @@ def comparer():
         else:
             response1 = input("Invalid major. Please input a major as listed from the UCI catalogue.\n> ")
     website1 = MAJORS[response1]
-    
+     
     response2 = input("Input the second major, as listed from the UCI catalogue.\n> ")
     
     while not isMajor(response2):
