@@ -25,7 +25,6 @@ def printCourse(overlapping_course_list):
     for table_item in overlapping_course_list:
         if " : " in table_item:
             print("  - ", end="")
-        
         print(table_item)
 
 def comparer():
