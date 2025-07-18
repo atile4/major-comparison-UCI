@@ -9,7 +9,7 @@
 ```
 
 
-Generates a list of overlapping courses between two majors from the University of California Irvine Catalogue
+Finds and outputs a list of overlapping courses between two inputted majors from the University of California Irvine Major Requirement Catalogue
 
 ## Requirements
 Python 3.7 interpreter
