@@ -1,6 +1,9 @@
 from scrape import getTable
 from major_info import MAJORS
 
+# Converts and filters HTML scrape text for processing into lists
+# @param website catalogue of a major
+# @return table list (with headers) and course list (without headers)
 def makeTableList(website : str) -> list | list:
     rows = getTable(website)
 
@@ -18,15 +21,23 @@ def makeTableList(website : str) -> list | list:
             course_list.append(first_col + " : " + title)
     return (table_list, course_list)
 
+# Validates if an input is a valid major
+# @param major input
+# @return boolean if major is valid
 def isMajor(response : str):
     return response.lower() in MAJORS
 
+# Text output a formatted course list
+# @param overlapping course list for one major
 def printCourse(overlapping_course_list):
     for table_item in overlapping_course_list:
         if " : " in table_item:
             print("  - ", end="")
         print(table_item)
 
+# Finds overlapping course requirements between majors with text inputted majors
+# @param None
+# @return None
 def comparer():
     response1 = input("Input the first major, as listed from the UCI catalogue.\n> ")
     while not isMajor(response1):
