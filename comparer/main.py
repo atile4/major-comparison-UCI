@@ -1,5 +1,4 @@
-from major_info import MAJORS_LIST
-from compare import comparer
+from compare import comparer, MAJORS_LIST
 
 def main():
     print("----------------------------------------\n"
@@ -9,7 +8,7 @@ def main():
       "----------------------------------------\n")
     print("Welcome to UCI Major Comparison!\n\n"
           "Type help to get started.")
-
+    
     run = True
     while run:
         cmd : str = input("> ")

@@ -1,5 +1,9 @@
 from scrape import getTable
-from major_info import MAJORS
+import json
+
+with open("uci_majors.json") as f:
+    major_data = json.load(f)
+MAJORS_LIST = list(major_data.keys())
 
 # Converts and filters HTML scrape text for processing into lists
 # @param website catalogue of a major
@@ -25,7 +29,7 @@ def makeTableList(website : str) -> list | list:
 # @param major input
 # @return boolean if major is valid
 def isMajor(response : str):
-    return response.lower() in MAJORS
+    return response.lower() in MAJORS_LIST
 
 # Text output a formatted course list
 # @param overlapping course list for one major
@@ -45,7 +49,7 @@ def comparer():
             exit()
         else:
             response1 = input("Invalid major. Please input a major as listed from the UCI catalogue.\n> ")
-    website1 = MAJORS[response1]
+    website1 = major_data[response1]
      
     response2 = input("Input the second major, as listed from the UCI catalogue.\n> ")
     
@@ -54,7 +58,7 @@ def comparer():
         else:
             response2 = input("Invalid major. Please input a major as listed from the UCI catalogue.\n> ")
     
-    website2 = MAJORS[response2]
+    website2 = major_data[response2]
     
     table_list1, courselist1 = makeTableList(website=website1)  
     table_list2, courselist2 = makeTableList(website=website2)
@@ -76,3 +80,6 @@ def comparer():
     
     print("\nNumber of courses that overlap between " + response1.capitalize() + " and " + response2.capitalize() + ":", overlap_length)
     print("\nInput your next command.")
+
+def printMajors():
+    print(MAJORS_LIST)

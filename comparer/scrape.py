@@ -25,9 +25,9 @@ def getMajors():
     for a in anchors:
         href = a['href']
         text = a.get_text(strip=True)
-        mod_text = text[0:len(text)-6].lower()
+        mod_text = text # [0:len(text)-6].lower()
 
         if pattern.search(href) and text and mod_text not in majors:
-            majors[text[0:len(text)-6].lower()] = f"https://catalogue.uci.edu{href}"
+            majors[mod_text] = f"https://catalogue.uci.edu{href}"
             
     return majors
