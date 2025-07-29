@@ -25,7 +25,7 @@ Modules in requirements.txt
 
 - Does not include any minors or Masters programs
 
-- If multiple courses are listed in one column on the UCI course requirement catalogue, it will be counted as one course.
+- ~~If multiple courses are listed in one column on the UCI course requirement catalogue, it will be counted as one course.~~
 
 - If there are no overlapping courses under a major's subheader, that subheader will still be printed out with no distinction.
 
