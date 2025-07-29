@@ -1,7 +1,8 @@
 from scrape import getTable
+import regex as re
 import json
 
-with open("uci_majors.json") as f:
+with open("data/uci_majors.json") as f:
     major_data = json.load(f)
 MAJORS_LIST = list(major_data.keys())
 
@@ -14,6 +15,7 @@ def makeTableList(website : str) -> list | list:
     table_list = []
     course_list = []
     
+    pattern = re.compile(r"^(.*\S)\s+(\S+)$")
     for row in rows:
         cols = row.find_all('td')
         first_col = cols[0].get_text(strip=True).replace("\xa0", " ")
@@ -21,8 +23,18 @@ def makeTableList(website : str) -> list | list:
             table_list.append(first_col)
         else:
             title = cols[1].get_text(strip=True)
-            table_list.append(first_col + " : " + title)
-            course_list.append(first_col + " : " + title)
+            if "-" in first_col:
+                match = pattern.match(first_col)
+                school, codes = match.groups()
+                codes = codes.split("-")
+                titles = title.split("and ")
+
+                for i in range(len(codes)):
+                    table_list.append(f"{school} {codes[i]} : {titles[i]}")
+                    course_list.append(f"{school} {codes[i]} : {titles[i]}")
+            else:
+                table_list.append(first_col + " : " + title)
+                course_list.append(first_col + " : " + title)
     return (table_list, course_list)
 
 # Validates if an input is a valid major

@@ -29,4 +29,6 @@ def main():
                 print("Thanks for using.")
                 run = False
             case _: print("Invalid command. Type help for a list of commands.")
-main()
+
+if __name__ == "__main__":
+    main()
